@@ -1,0 +1,13 @@
+﻿@model CourseProject.Data.DisplayModels.DisplayBook
+@{
+	var imgLink = $"\\res\\{Model.Img}"; 
+}
+
+<a asp-controller="Home" asp-action="Book" asp-route-id="@Model.BookId" style="max-width:220px; align-content:center;">
+	<div class="card">
+		<img src=@imgLink class="card-img-top" style="margin-top:5px; max-height: 310px; max-width: 210px;">
+		<div class="card-body">
+			<h3 style="font-size: inherit;">@Model.Title</h3>
+		</div>
+	</div>
+</a>

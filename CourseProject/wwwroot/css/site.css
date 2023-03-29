@@ -1,0 +1,49 @@
+html {
+  font-size: 14px;
+}
+
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 60px;
+}
+
+
+
+a {
+    color: inherit;
+    text-decoration: none;
+    font-size: inherit; margin-bottom: 0px;
+}
+
+h3 {
+    font-size: inherit;
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+p {
+    display: inline-block;
+    margin-bottom: 0px;
+}
+
+.desc-block {
+    margin-bottom: 10px;
+}
+
+.checked {
+    color: orange;
+}
+
+i:hover {
+    color: #0fa2f7;
+}

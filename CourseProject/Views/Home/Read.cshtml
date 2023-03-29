@@ -1,0 +1,66 @@
+﻿@using CourseProject.Data.DisplayModels
+@model DisplayChapter
+
+<!--Heading-->
+<div style="text-align:center;">
+	<a asp-controller="Home" asp-action="Book" asp-route-id="@Model.BookId" style="font-family: 'Roboto Condensed'; font-size: 30px;">@Model.BookTitle.ToUpper()</a>
+	<br />
+	<h3>@Model.Title</h3>
+
+	<br />
+	<br />
+
+	<!--Chapter controls-->
+	@if(@Model.BookChapterId - 1 > 0){
+		<a id="prev" style="font-size: 18px;" asp-controller="Home" asp-action="Read" asp-route-bookId="@Model.BookId" asp-route-chapterId="@(Model.BookChapterId - 1)">
+			<button>&lt; Prev chapter</button>
+		</a>
+	} else
+	{
+		<button style="font-size: 18px;" disabled>&lt; Prev chapter</button>
+	}
+
+
+	@if(@Model.BookChapterId + 1 <= @Model.ChapterCount){
+		<a id="next" style="font-size: 18px;" asp-controller="Home" asp-action="Read" asp-route-bookId="@Model.BookId" asp-route-chapterId="@(Model.BookChapterId + 1)">
+			<button>Next chapter &gt;</button>
+		</a>
+	} else
+	{
+		<button style="font-size: 18px;" disabled>Next chapter &gt;</button>
+	}
+</div>
+
+
+<!--Content-->
+<br />
+
+@foreach(string line in @Model.Text.Split("\n"))
+{
+	<p style="margin: 0 0 20px; font-size: 18px;">@line</p><br />
+}
+
+
+
+<!--Footing-->
+<div style="text-align:center;">
+	<!--Chapter controls-->
+	@if(@Model.BookChapterId - 1 > 0){
+		<a style="font-size: 18px;" asp-controller="Home" asp-action="Read" asp-route-bookId="@Model.BookId" asp-route-chapterId="@(Model.BookChapterId - 1)">
+			<button>&lt; Prev chapter</button>
+		</a>
+	} else
+	{
+		<button style="font-size: 18px;" disabled>&lt; Prev chapter</button>
+	}
+
+
+	@if(@Model.BookChapterId + 1 <= @Model.ChapterCount){
+		<a style="font-size: 18px;" asp-controller="Home" asp-action="Read" asp-route-bookId="@Model.BookId" asp-route-chapterId="@(Model.BookChapterId + 1)">
+			<button>Next chapter &gt;</button>
+		</a>
+	} else
+	{
+		<button style="font-size: 18px;" disabled>Next chapter &gt;</button>
+	}
+</div>

@@ -1,0 +1,11 @@
+﻿@using CourseProject.Data.DisplayModels
+@model List<DisplayBook>
+
+<!--Info label-->
+<div class="title-list" style="border-bottom:1px solid rgb(62, 68, 70); margin-bottom: 20px;">
+	<h2 style="font-family: 'Roboto Condensed'; font-size: 20px;">NOVELS BY @ViewBag.PickedAuthor</h2>
+</div>
+
+<div class="row">
+	@Html.DisplayForModel()
+</div>
